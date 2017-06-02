@@ -13,7 +13,8 @@ App.cable.subscriptions.create "AppearanceChannel",
     @perform("appear", appearing_on: $("main").data("appearing-on"))
 
   away: ->
-    @perfomr("away")
+    @perform("away")
+
 
   buttonSelector = "[data-behavior~=appear_away]"
 
