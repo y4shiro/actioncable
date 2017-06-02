@@ -1,6 +1,7 @@
-App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
+App.chatChannel = App.cable.subscriptions.create { channel: "ChatChannel", room: "Best Room" },
   received: (data) ->
-    @appendLine(data)
+    # data => { sent_by: "Paul", body: "This is a cool chat app." }
+    App.chatChannel.send({ sent_by: "Paul", body: "This is a cool chat app." })
 
   appendLine: (data) ->
     html = @createLine(data)
