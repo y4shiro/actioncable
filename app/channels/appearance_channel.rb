@@ -1,5 +1,6 @@
 class AppearanceChannel < ApplicationCable::Channel
   def subscribed
+    logger.debug 'Appearance Channel subscribed'
     current_user.appear
   end
 

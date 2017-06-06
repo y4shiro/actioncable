@@ -1,5 +1,6 @@
 class RoomChannel < ApplicationCable::Channel
   def subscribed
+    logger.debug 'Subscribed RoomChannel'
     stream_from "room_channel"
   end
 
@@ -8,6 +9,7 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
+    logger.debug 'Called speak method'
     Message.create! content: data['message']
   end
 end
