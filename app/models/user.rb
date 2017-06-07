@@ -22,9 +22,11 @@ class User < ApplicationRecord
 
   def is_online
     self.update(online: true)
+    ActionCable.server.broadcast 'appearance_channel', message: "#{self.name} is online."
   end
 
   def is_offline
     self.update(online: false)
+    ActionCable.server.broadcast 'appearance_channel', message: "#{self.name} is offline."
   end
 end

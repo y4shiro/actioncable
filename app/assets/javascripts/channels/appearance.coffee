@@ -9,6 +9,9 @@ App.appearance = App.cable.subscriptions.create "AppearanceChannel",
   rejected: ->
     console.log('AppearanceChannel Rejected.')
 
+  received: (data) ->
+    console.log('message recieved', data)
+
   appear: ->
     data = 'hello'
     @perform("appear", appearing_on: data)

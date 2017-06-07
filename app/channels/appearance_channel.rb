@@ -1,5 +1,6 @@
 class AppearanceChannel < ApplicationCable::Channel
   def subscribed
+    stream_from 'appearance_channel'
     user = User.where(id: current_user.id).first
     user.is_online
     logger.debug 'Appearance Channel subscribed'
