@@ -19,4 +19,12 @@ class User < ApplicationRecord
   def away
     logger.info "User #{self.email} away"
   end
+
+  def is_online
+    self.update(online: true)
+  end
+
+  def is_offline
+    self.update(online: false)
+  end
 end
