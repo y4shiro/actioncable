@@ -13,7 +13,8 @@ App.appearance = App.cable.subscriptions.create "AppearanceChannel",
     @uninstall()
 
   appear: ->
-    @perform("appear", appearing_on: $("main").data("appearing-on"))
+    data = 'hello'
+    @perform("appear", appearing_on: data)
 
   away: ->
     @perform("away")
