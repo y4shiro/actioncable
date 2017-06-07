@@ -1,16 +1,13 @@
 App.appearance = App.cable.subscriptions.create "AppearanceChannel",
   connected: ->
     console.log('AppearanceChannel Connected.')
-    @install()
     @appear()
 
   disconnected: ->
     console.log('AppearanceChannel Disconnected.')
-    @uninstall()
 
   rejected: ->
     console.log('AppearanceChannel Rejected.')
-    @uninstall()
 
   appear: ->
     data = 'hello'
