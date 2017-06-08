@@ -1,22 +1,24 @@
 App.appearance = App.cable.subscriptions.create "AppearanceChannel",
   connected: ->
-    console.log('AppearanceChannel Connected.')
+    console.log('[Appearance_Channel] Connected.')
     @appear()
 
   disconnected: ->
-    console.log('AppearanceChannel Disconnected.')
+    console.log('[Appearance_Channel] Disconnected.')
 
   rejected: ->
-    console.log('AppearanceChannel Rejected.')
+    console.log('[Appearance_Channel] Rejected.')
 
   received: (data) ->
-    console.log('message recieved', data)
+    console.log('[Appearance_Channel] message recieved', data)
 
   appear: ->
+    console.log('[Appearance_Channel] appear.')
     data = 'hello'
     @perform("appear", appearing_on: data)
 
   away: ->
+    console.log('[Appearance_Channel] away.')
     @perform("away")
 
 
