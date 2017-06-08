@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170607052704) do
+ActiveRecord::Schema.define(version: 20170608065149) do
 
   create_table "messages", force: :cascade do |t|
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
 # Could not dump table "users" because of following StandardError

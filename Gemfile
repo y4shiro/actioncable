@@ -25,6 +25,7 @@ gem 'redis'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'bullet'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
