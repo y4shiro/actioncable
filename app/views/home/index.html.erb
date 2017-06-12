@@ -16,7 +16,14 @@
       <td><%= user.id %></td>
       <td><%= user.name %></td>
       <td><%= user.email %></td>
-      <td><%= user.online %></td>
+      <td>
+        <span class="mdl-badge" data-badge="1"><%= user.online %></span>
+        <% if user.online == 't' %>
+          <img src="/images/icon_status-online.png" />
+        <% else %>
+          <img src="/images/icon_status-offline.png" />
+        <% end %>
+      </td>
     </tr>
     <% end %>
   </tbody>

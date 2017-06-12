@@ -4,6 +4,10 @@ class ApplicationController < ActionController::Base
 
   $onlineusers = User.where(online: true)
 
+  def online_users
+    onlineusers = User.where(online: true)
+  end
+
   private
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])

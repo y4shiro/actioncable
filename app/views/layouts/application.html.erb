@@ -27,6 +27,9 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <h4 class="mdc-typography--display1">現在<%= $onlineusers.count %>人がオンライン</h4>
+    <% $onlineusers.each do |user| %>
+      <p><%= user.name %></p>
+    <% end %>
     <%= yield %>
   </body>
 </html>
